@@ -263,7 +263,7 @@ def process():
     wordcount = {}
     if db_id:
         try:
-            print "Processing " + db_id
+            app.logger.info("Processing " + db_id)
             
             conn = sqlite3.connect(os.path.join(UPLOAD_FOLDER, db_id))
             conn.row_factory = sqlite3.Row
@@ -281,9 +281,7 @@ def process():
             return json.dumps(sorted_list[0:200])
         
         except:
-            print '-'*60
-            traceback.print_exc(file=sys.stdout)
-            print '-'*60
+            traceback.print_exc(file=sys.stderr)
             
         finally:
             if conn:
