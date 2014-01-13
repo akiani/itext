@@ -4,6 +4,8 @@
 Created on Jan 11, 2014
 
 @author: amir
+
+SMS DB Code from https://github.com/toffer/iphone-sms-backup
 '''
 
 from flask import Flask, render_template, url_for, request, redirect, url_for
