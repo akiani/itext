@@ -3,8 +3,7 @@ itext
 
 Tag Cloud Generator For iPhone Text Messages
 
-This is simple web app to parse iPhone text messages from a backup database and generate a tag cloud for the most used words
-in a text message.
+This is simple web app to parse iPhone text messages from a backup database and generate a tag cloud for the most used words in text messages.
 
 
 To set up
