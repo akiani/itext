@@ -6,21 +6,15 @@ Created on Jan 11, 2014
 @author: amir
 '''
 
-from flask import Flask
-from flask import render_template, url_for
-from flask import Flask, request, redirect, url_for
+from flask import Flask, render_template, url_for, request, redirect, url_for
 from werkzeug import secure_filename
-import os
-import uuid, json
-import sqlite3, re, sys, traceback
-import operator
+import os, uuid, json, sqlite3, re, sys, traceback, operator
 
 app = Flask(__name__, static_folder='templates')
 
 UPLOAD_FOLDER = 'uploads'
 SMS_DB_SHA1 = '3d0d7e5fb2ce288813306e4d4636395e047a3d28'
 ALLOWED_EXTENSIONS = set(['*'])
-
 
 STOP_WORDS = set(["i","me","my","myself","we","us","our","ours","ourselves","you","your","yours",
                   "yourself","yourselves","he","him","his","himself","she","her","hers","herself","it",
@@ -303,9 +297,9 @@ def check_status():
 
 
 @app.route("/", methods=['GET'])
-def hello():
+def index():
     return render_template('index.html')
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run(debug=True)
